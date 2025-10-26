@@ -1,0 +1,21 @@
+const mongoose = require('mongoose')
+
+mongoose.connect(`mongodb://127.0.0.1:27017/practiceproject`)
+
+const userschema = mongoose.Schema({
+    name : String,
+    username : String,
+    password : String,
+    email : String,
+    age : Number,
+    posts :[{
+        type : mongoose.Schema.ObjectId,
+        ref : 'post'
+    }],
+    profilepic: {
+       type: String,
+       default: "default.webp"
+    }
+})
+
+module.exports = mongoose.model("user", userschema)
