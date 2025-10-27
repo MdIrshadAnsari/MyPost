@@ -14,7 +14,7 @@ const userschema = mongoose.Schema({
     }],
     profilepic: {
        type: String,
-       default: "default.webp"
+       default: "default.jpg"
     }
 })
 
